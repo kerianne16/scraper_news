@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/">Home</a>
+        <a class="nav-item nav-link" href="/savedArticles">Saved</a>
+    </div>
+</nav>
+
+<div class="jumbotron jumbotron-fluid text-center"
+    style="background-color:lightpink; color:white; height:400px; padding-top:125px;">
+    <h1 style="font-size: 4.5rem;">BuzzFeed</h1>
+
+    <a class="btn btn-primary btn-md" style="background-color:black; color:white; border:none; margin:10px;" id="scrape"
+        role="button">Scrape
+        Articles</a>
+    <a class="btn btn-primary btn-md" style="background-color:black; color:white; border:none; margin:10px;" id="delete"
+        role="button">Delete
+        Articles</a>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 articles">
+            {{#each articles}}
+
+            <div class="card" style="margin:30px;">
+                <div class="card-body" style="float:left;">
+
+
+                    <a href="#" class="btn btn-primary" style="float:right; background-color: ; border:none;" id="save"
+                        value={{this._id}}>Save
+                    </a>
+                    <a href={{this.link}}>
+                        <h2 class="card-title" style="color:black;">{{this.title}}</h2>
+                    </a>
+                    <h6 class="card-text" style="color:grey;">{{this.summary}}</h6>
+
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
