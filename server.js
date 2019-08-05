@@ -24,11 +24,11 @@ app.set("view engine", "handlebars");
 // Use morgan for logging requests
 app.use(logger("dev"));
 
-// Parse req body as JSON
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Public static folder (bucket)
+
 app.use(express.static("public"));
 
 // Connect to MongoDB - if deployed then use monolab - else use local db
